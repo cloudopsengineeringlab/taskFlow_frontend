@@ -1,4 +1,4 @@
-# TaskFlow — Frontend autonome 🇫🇷
+# TaskFlow — Frontend autonome
 
 TaskFlow est une interface SaaS de gestion de tâches et de projets construite avec **React 18** et **Material UI**.
 
