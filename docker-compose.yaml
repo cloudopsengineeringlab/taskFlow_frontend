@@ -1,0 +1,66 @@
+services:
+
+  frontend-container:
+  # nginx:
+  #   container_name: nginx-server
+  #   image: nginx:latest
+  #   restart: always
+  #   ports:
+  #     - "8080:80"
+  #   volumes:
+  #     - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+  #     # - ./backend:/var/www/html
+  #   depends_on:
+  #  
+    container_name: my-frontend
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:      
+     - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - app-network
+      # - laravel-container
+  #     - frontend-container
+  #   networks:
+  #     - app-network
+
+
+  # mysql:
+  #   container_name: mysql-db
+  #   image: mysql:8
+  #   restart: always
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_DATABASE: todo_db
+  #   volumes:
+  #     - ./mysql/data:/var/lib/mysql
+  #   ports:
+  #     - "3307:3306"
+  #   networks:
+  #     - app-network
+
+  
+  # phpmyadmin:
+  #   container_name: phpmyadmin
+  #   image: phpmyadmin/phpmyadmin
+  #   restart: always
+  #   environment:
+  #     PMA_HOST: mysql-db
+  #     PMA_PORT: 3306
+  #   ports:
+  #     - "8081:80"
+  #   depends_on:
+  #     - mysql
+  #   networks:
+  #     - app-network
+      
+
+
+networks:
+    app-network:
+      driver: bridge
+    
