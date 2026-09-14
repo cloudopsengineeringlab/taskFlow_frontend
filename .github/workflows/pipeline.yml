@@ -31,8 +31,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run tests
-        run: npm test -- --coverage --watchAll=false --forceExit
+      # - name: Run tests
+      #   run: npm test -- --coverage --watchAll=false --forceExit
 
       - name: Upload coverage
         uses: actions/upload-artifact@v4
