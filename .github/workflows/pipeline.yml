@@ -59,10 +59,10 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Builder l'image du frontend
-        run: docker build -t $DOCKER_USERNAME/taskFrontend:$IMAGE_TAG .
+        run: docker build -t $DOCKER_USERNAME/taskfrontend:$IMAGE_TAG .
 
       - name: Pusher l'image frontend
-        run: docker push $DOCKER_USERNAME/taskFrontend:$IMAGE_TAG
+        run: docker push $DOCKER_USERNAME/taskfrontend:$IMAGE_TAG
 
 
 
